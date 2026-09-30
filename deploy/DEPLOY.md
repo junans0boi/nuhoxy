@@ -30,15 +30,19 @@ pm2 start deploy/ecosystem.config.cjs
 pm2 save
 ```
 
-## Caddy 설정 적용
+## Caddy 설정 적용 (OCI 서버에서)
+
+OCI는 Caddy reverse proxy만 담당한다. 앱은 M1(Tailscale: 100.68.188.49)에서 실행된다.
 
 ```bash
-# Caddy 서버(OCI 또는 동일 머신)에서
-sudo cp deploy/nuhoxy.kro.kr.caddy /etc/caddy/sites/
-# Caddyfile에 import 라인 추가:
+# OCI SSH 접속 후
+sudo cp /path/to/nuhoxy.kro.kr.caddy /etc/caddy/sites/
+# Caddyfile에 import 라인이 없으면 추가:
 # import /etc/caddy/sites/*.caddy
 sudo systemctl reload caddy
 ```
+
+> `reverse_proxy 100.68.188.49:3013` — M1 Tailscale 주소:nuhoxy 포트
 
 ## 업데이트 배포
 
