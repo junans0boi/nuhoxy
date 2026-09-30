@@ -1,0 +1,45 @@
+/* Pretendard & Space Grotesk — @import은 반드시 최상단에 위치 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap');
+@import "tailwindcss";
+
+/* Nuhoxy Design Tokens */
+:root {
+  --bg:           #0D0D0D;
+  --surface:      #1A1A1A;
+  --accent:       #C8FF00;
+  --text-primary: #F5F5F5;
+  --text-muted:   #888888;
+  --danger:       #FF3B5C;
+  --border:       #2A2A2A;
+}
+
+@theme inline {
+  --color-bg:           var(--bg);
+  --color-surface:      var(--surface);
+  --color-accent:       var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted:   var(--text-muted);
+  --color-danger:       var(--danger);
+  --color-border:       var(--border);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+.font-grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
